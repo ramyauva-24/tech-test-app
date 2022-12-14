@@ -1,0 +1,75 @@
+<div class="container">
+    <div class="d-flex justify-content-end">
+        <div class="m-3">
+            <button class="button" (click)="openPopup(defaultEditItem)"> Add Todo</button>
+        </div>
+        <div>
+            <label>Filter</label>
+            <select class="form-select mb-3" (change)="ChangeSelection($event)">
+                <option *ngFor="let item of filterList" class="form-control" [value]="item">
+                    {{ item }}
+                </option>
+            </select>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th scope="col">Mark as done</th>
+                        <th scope="col">Label</th>
+                        <th scope="col"> Description</th>
+                        <th class="d-flex justify-content-between" scope="col">
+                            <label class="categoryLabel">Category</label>
+                            <select class="form-select" id="category" (change)="ChangeSelection($event)">
+                                <option *ngFor="let item of categoryList" class="form-control" [value]="item">
+                                    {{ item }}
+                                </option>
+                            </select>
+                        </th>
+                        <th scope="col">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of filteredList; let i = index">
+                        <td>
+                            <div class="form-check">
+                                <input type="checkbox" class="form-check-input" [checked]="item.done"
+                                    (change)="MarkTodo($event, item)">
+                            </div>
+                        </td>
+                        <td>{{item.label}} </td>
+                        <td>{{ item.description }}</td>
+                        <td>{{ item.category }}</td>
+                        <td> <button class="edit" [disabled]="item.done" (click)="openPopup(item)"> Edit</button>
+                            <button class="edit delete" [disabled]="item.done"
+                                (click)="deleteTodoItem(item, i)">Delete</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div *ngIf="filteredList.length<=0">
+                No List found
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':displayStyle}">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title"> {{editItem.id ? 'Edit' : 'Add'}} Todo</h5>
+            </div>
+            <div class="modal-body">
+                <app-todo-modal *ngIf="displayStyle === 'block'" [inputData]="editItem" (sendData)="submitForm($event)">
+                </app-todo-modal>
+            </div>
+            <div class="modal-footer">
+                <button (click)="closePopup()" class="close"> Close</button>
+            </div>
+        </div>
+    </div>
+</div>

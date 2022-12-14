@@ -1,0 +1,53 @@
+{
+  "tasks": [
+    {
+      "id": 1,
+      "label": "Kitchen Cleanup event",
+      "description": "Clean my dirty kitchen yes",
+      "category": "health",
+      "done": true
+    },
+    {
+      "id": 2,
+      "label": "name",
+      "description": "hello",
+      "category": "office",
+      "done": true
+    },
+    {
+      "id": 3,
+      "label": "yes",
+      "description": "hui",
+      "category": "events",
+      "done": true
+    },
+    {
+      "id": 4,
+      "label": "4th",
+      "description": "new",
+      "category": "office",
+      "done": true
+    },
+    {
+      "id": 5,
+      "label": "5th",
+      "description": "new",
+      "category": "Hobbies",
+      "done": true
+    },
+    {
+      "id": 7,
+      "label": "name",
+      "description": "hey",
+      "category": "office",
+      "done": false
+    },
+    {
+      "id": 8,
+      "label": "fifty",
+      "description": "sample",
+      "category": "bureaucracy",
+      "done": false
+    }
+  ]
+}

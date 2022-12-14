@@ -1,0 +1,45 @@
+.button {
+    box-shadow: 0 3px 5px 0px #0003, 0 6px 0px #00000024, 0 1px 1px #0000001f;
+    background-color: #33374c;
+    padding: 8px 10px;
+    font-size: 11px;
+    border: none;
+    color: white;
+}
+
+.categoryLabel {
+    margin-right: 10px;
+}
+
+.edit {
+    box-shadow: none;
+    background-color: #fff;
+    padding: 5px;
+    font-size: 10px;
+    width: 38px;
+    border-radius: 5px;
+    margin: 5px;
+    color: rgb(17, 173, 129);
+    border: 1.3px solid rgb(17, 173, 129);
+}
+
+.delete {
+    color: rgb(195, 52, 44);
+    border: 1.3px solid rgb(195, 52, 44);
+}
+
+button:disabled,
+button[disabled] {
+    opacity: 0.5;
+}
+
+.form-check-input:checked {
+    background-color: rgb(42, 230, 176) !important;
+    border-color: rgb(42, 230, 176) !important;
+}
+
+.close {
+    padding: 5px;
+    font-size: 11px;
+    border: none;
+}
