@@ -3,7 +3,6 @@ import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { TodoService } from './todo.service';
 
 describe('TodoService', () => {
-  let service: TodoService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
